@@ -1,0 +1,447 @@
+/* تنسيقات أساسية لإعادة الضبط */
+body {
+    font-family: 'Arial', sans-serif;
+    /* ... تنسيقات أخرى ... */
+    
+    /* التأكد من ضبط الاتجاه إلى LTR */
+    direction: ltr !important; 
+    text-align: left !important; 
+}
+
+/* ... بقية تنسيقات الـ CSS ... */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f1f1f1;
+    color: #6d1111;
+}
+
+/* Products Section */
+.products-section {
+    padding: 60px 20px;
+    background: #f9f9f9;
+}
+
+.products-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2em;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.product-price {
+    font-size: 1.3em;
+    color: #7d0a0a;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.add-to-cart {
+    background: #7d0a0a;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #7d0a0a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+
+.site-header {
+    background-color: #600e0e; /* لون الخلفية */
+    color: white; /* لون النص */
+    padding: 1rem 0; /* مسافة داخلية علوية وسفلية */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+    display: flex; /* استخدام Flexbox لترتيب العناصر (الشعار والقائمة) */
+    justify-content: space-between; /* توزيع العناصر على الأطراف */
+    align-items: center; /* محاذاة العناصر عمودياً في المنتصف */
+    width: 100%;
+    position: fixed; /* تثبيت رأس الصفحة في الأعلى عند التمرير */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* التأكد من ظهور رأس الصفحة فوق المحتوى الآخر */
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-right: 1rem; /* مسافة داخلية للشعار من اليمين (لأن الاتجاه RTL) */
+    padding-left: 1rem;
+}
+
+.main-nav ul {
+    list-style: none; /* إزالة النقاط من القائمة */
+    display: flex; /* استخدام Flexbox لترتيب عناصر القائمة أفقياً */
+    padding-left: 1rem; /* مسافة داخلية للقائمة من اليسار (لأن الاتجاه RTL) */
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* مسافة داخلية للروابط */
+    display: block;
+    transition: background-color 0.3s; /* انتقال سلس لتغيير اللون */
+}
+
+.main-nav ul li a:hover {
+    background-color: #555; /* تغيير لون الخلفية عند تمرير المؤشر */
+    border-radius: 4px;
+}
+
+/* تنسيق المحتوى الرئيسي لإزاحته تحت رأس الصفحة الثابت */
+main {
+    margin-top: 80px; /* يجب أن تكون أكبر من ارتفاع رأس الصفحة لمنع تداخل المحتوى */
+    padding: 1rem;
+}
+
+/* استعلام وسائط لجعل رأس الصفحة متجاوباً للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column; /* ترتيب العناصر عمودياً على الشاشات الصغيرة */
+        align-items: flex-start; /* محاذاة العناصر إلى اليمين (أو اليسار حسب dir) */
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* ترتيب الروابط عمودياً */
+        width: 100%;
+    }
+
+    .main-nav ul li a {
+        padding: 1rem;
+        text-align: right; /* محاذاة النص إلى اليمين (أو اليسار حسب dir) */
+    }
+
+    .logo {
+        padding-bottom: 0.5rem;
+    }
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #440303;
+    /* التأكد من العرض باللغة العربية بشكل صحيح */
+    direction: rtl; 
+    text-align: right;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #7c0808;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.category {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(108, 4, 4, 0.529);
+}
+
+.category h2 {
+    color: #640404;
+    border-bottom: 2px solid #a70909d8;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px; /* مسافة بين المنتجات */
+    flex-wrap: wrap; /* للسماح للمنتجات بالنزول لسطر جديد لو الشاشة ضاقت */
+}
+
+.product-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1 1 calc(33% - 20px); /* لجعل 3 منتجات في السطر الواحد */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.product-card h3 {
+    margin-top: 0;
+    color: #a70909;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e94c3d;
+}
+
+.price span {
+    color: #333;
+    margin-right: 5px;
+}
+
+button {
+    background-color: #d55454;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #d55454;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    direction: rtl; /* لغة عربية */
+    text-align: right;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #a35151;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* لجعل التسمية والقيمة على نفس السطر */
+    align-items: center;
+}
+
+.label {
+    font-weight: bold;
+    color: #555;
+    flex: 1;
+}
+
+.value {
+    color: #000;
+    flex: 2;
+    text-align: left; /* جعل القيمة محاذية لليسار داخل العنصر */
+}
+
+.edit-btn {
+    background-color: #d55454;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.edit-btn:hover {
+    background-color: #d55454;
+}
+
+/* تنسيق قائمة الطلبات */
+.order-list {
+    list-style: none;
+    padding: 0;
+}
+
+.order-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order-status {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.pending {
+    background-color: #f5d3d3;
+    color: #850a04;
+}
+
+.completed {
+    background-color: #850a04;
+    color: #f5d3d3;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl; /* لضمان العرض باللغة العربية بشكل صحيح */
+    text-align: right;
+    background-color: #f4f4f4;
+}
+
+/* تنسيق القسم الرئيسي (Hero Section) */
+.hero-section {
+    background-color: #f1b5b5; /* لون خلفية جذاب */
+    color: #850a04; /* لون النص */
+    padding: 100px 20px; /* مساحة داخلية علوية وسفلية */
+    text-align: center; /* محاذاة النص والزر في الوسط */
+    /* استخدام Flexbox لتوسيط المحتوى داخل القسم */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* جعل الارتفاع نصف شاشة العرض */
+}
+
+.hero-content {
+    max-width: 600px; /* تحديد عرض المحتوى ليكون مقروءاً */
+    margin: 0 auto;
+}
+
+/* تنسيق العبارة الترحيبية (H1) */
+.hero-content h1 {
+    font-size: 3em; /* حجم خط كبير وجذاب */
+    margin-bottom: 20px;
+    border-bottom: 3px solid #6b0202; /* خط تحت العنوان للتميز */
+    padding-bottom: 10px;
+    display: inline-block; /* لجعل الخط السفلي يمتد تحت النص فقط */
+}
+
+/* تنسيق وصف البراند (Paragraph) */
+.hero-content p {
+    font-size: 1.2em;
+    line-height: 1.6; /* تباعد الأسطر لتحسين القراءة */
+    margin-bottom: 30px;
+    color: #aa2626; /* لون أفتح قليلاً من الأبيض */
+}
+
+/* تنسيق زر الدعوة للعمل (CTA Button) */
+.cta-button {
+    display: inline-block;
+    background-color: #6b0202; /* لون الزر */
+    color: rgb(255, 255, 255);
+    padding: 15px 30px;
+    text-decoration: none; /* إزالة الخط السفلي من الرابط */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* تأثير عند مرور الماوس */
+}
+
+.cta-button:hover {
+    background-color: #6b0202; /* لون أغمق عند المرور */
+}
+
+body {
+    /* 1. تحديد مسار الصورة */
+    background-image: url(https://images.unsplash.com/photo-1642383511822-b493c213faca?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1287); 
+
+    /* 2. ضبط حجم الصورة لتغطي كامل الصفحة */
+    background-size: cover; 
+
+    /* 3. منع تكرار الصورة إذا كانت صغيرة */
+    background-repeat: repeat; 
+
+    /* 4. تثبيت الصورة عند التمرير (اختياري) */
+    background-attachment: scroll; 
+
+    /* 5. ضبط موضع الصورة (توسطها) */
+    background-position: center; 
+
+    /* 6. لون احتياطي في حال فشل تحميل الصورة */
+    background-color: rgb(242, 216, 226); 
+}
+
+
+
+

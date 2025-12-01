@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+    <head>
+                                <!-- التكليف 01 -->
+        <!-- ما هو ال السطر الذي يتم كتابته لتخبر المتصفح أن إصدار اللغة المستخدم في إنشاء الصفحة هو HTML5 ؟
+         "<!DOCTYPE html>" -->
+
+    <!-- ما هو ال Rendering Mode الذي سوف يتبعه المتصفح إذا لم تكتب السطر الخاص بتحديد الإصدار ؟ 
+ إذا لم تكتب <!DOCTYPE html>, سيتحول المتصفح إلى:
+🛑 Quirks Mode (وضع التوافق)
+وهو وضع قديم يتبع قواعد عرض غير قياسية لتوافق الصفحات القديمة، مما قد يؤدي إلى مشاكل في التنسيق أو الأداء. -->
+
+    <!-- هل من السليم استخدام أكثر من h1 في الصفحة؟ جاوب بنعم أو ل
+ "نعم" -->
+
+    <!-- لديك عنصر يحتوي على بيانات المنتج، وعنوان المنتج مكتوب بـ h3. هل من المنطقي وضع عنوان h2 داخل نفس المنتج؟ 
+  لأن h2 تدل على عنوان أعلى في المستوى من h3. لا يجوز أن يكون هناك h2 داخل عنصر يحتوي بالفعل على h3 كعنوان رئيسي — هذا يكسر التسلسل الهيكلي الصحيح للعناوين. "لا"-->
+
+    <!-- إلى ماذا ترمز العناصر h1, h2, h3, h4, h5, h6؟ 
+ هذه العناصر تُستخدم لتمثيل العناوين الهيكلية للصفحة:
+    h1: العنوان الرئيسي (الأعلى أهمية)
+    h2: عنوان فرعي تحت h1
+    h3: عنوان فرعي تحت h2
+    h4: عنوان فرعي تحت h3
+    h5: عنوان فرعي تحت h4
+    h6: العنوان الأقل أهمية
+🧠 كلما زاد الرقم، قلّت أهمية العنوان، ويُستخدم هذا لتحديد البنية الهيكلية للمحتوى -->
+
+                            <!-- التكليف 02 
+                             هل هناك إختلاف بين هذه العناصر عندما يتم إظهارهم في الصفحة أم لا ؟
+
+                        <p class="element">Welcome To The New World</p>
+                        <p class='element'>Welcome To The New World</p>
+                        <p class=element>Welcome To The New World</p>
+     نعم هنا نلاحظ ان جميع هذه العناصر تمتلك نفس الاسم ولكن بطريقة مختلفة 
+                            " " => double quotes
+                            '' => single quotes
+                        => no quotes => يعتمد على الوضع
+
+                             <!-- التكليف 03 
+                
+                 هل هناك إختلاف بين هذه العناصر عندما يتم إظهارهم في الصفحة أم لا ؟
+                      
+                        <p class=element hidden>Welcome To The New World</p>
+                        <p class="element" hidden>Welcome To The New World</p>
+
+                                     الفرق    في الكود الأول:
+                        <p class=element hidden>...</p>
+                        ما في علامات اقتباس حول اسم الكلاس. هذا يعمل فقط إذا كان الاسم كلمة واحدة بدون مسافات أو رموز خاصة.
+                        في الكود الثاني:
+                        <p class="element" hidden>...</p>
+                        فيه علامات اقتباس حول الاسم، وهذا هو الأسلوب الصحيح والمعتمد في HTML، ويُستخدم دائمًا لتجنب الأخطاء.
+                        🔹 باختصار:
+                        الكودان يعطون نفس النتيجة، لكن الثاني أكثر دقة واحترافيةبسيط جدًا 👇 -->
+
+                        <!-- التكليف 04
+                         هل هذه العناصر سوف تظهر كلها بنفس الشكل أم لا ؟
+                         <p>Hello World</p>
+                         <p>Hello World</p>
+                         <p>Hello World</p>
+                         <p>Hello World</p>
+                         نعم لانها بنفس الصيغة -->
+
+                         <!-- التكليف 05
+                    بجانب كل Attribute من الموجودين في المثال قم بكتابة هل هو من ال Global Attribute أم لا ؟ 
+                            title  نعم
+                            href   لا
+                            src   لا
+                            hidden   نعم
+                            charset  لا
+                            class  نعم
+                            id   نعم
+                            type   لا   -->
+
+                
+<!-- this meta is for the backstage -->
+        <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Manar's Jewellery</title>
+
+                 <link rel="stylesheet" href="master.css">
+
+          <style>
+              body { background-color: rgb(242, 216, 226);  }
+              .element { color: red; }
+         </style>
+     </head>
+         <body>
+            <div class="container">
+             <div class="profile-container">
+        <h1>Manar's Jewellery</h1>
+        <!-- قسم المعلومات الأساسية -->
+        <div class="card">
+            <h2>Personal Information</h2>
+            <div class="info-item">
+                <span class="label">Full Name:</span>
+                <input type="text" required placeholder="Enter your name" name="name">
+            </div>
+            <div class="info-item">
+                <span class="label">Email:</span>
+                <input type="email" required placeholder="Enter a valid email" value="" name="email"
+                autofocus>
+            </div>
+            <div class="info-item">
+                <span class="label">Password:</span>
+                <input type="password" required placeholder="Enter a complex password" name="password"
+                minlength="8" 
+                maxlength="15" 
+                pattern="[a-zA-Z0-9]{8,15}">
+            </div>
+            <div class="info-item">
+                <span class="label">Mobile:</span>
+                <input type="tel" required placeholder="Enter your phone number" name="phone number">
+            </div>
+            <button class="edit-btn">Reset </button>
+            <button class="edit-btn">Update </button>
+        </div>
+
+        <!-- قسم عنوان الشحن -->
+        <div class="card">
+            <h2>Default Address</h2>
+            <div class="info-item">
+                <span class="label">Address:</span>
+                <input type="text" required placeholder="Enter your address" name="address">
+            </div>
+            <div class="info-item">
+                <span class="label">City:</span>
+                <input type="text" required placeholder="Enter your city" name="city">
+            </div>
+            <button class="edit-btn">Reset </button>
+            <button class="edit-btn">Update </button>
+        </div>
+
+        <!-- قسم سجل الطلبات (مثال مبسط) -->
+        <div class="card">
+            <h2>Orders</h2>
+            <ul class="order-list">
+                <li>
+                    <span>Order #12345</span>
+                    <span class="order-status pending">Pending</span>
+                    <span class="order-date">10 November 2025</span>
+                </li>
+                <li>
+                    <span>Order #12344</span>
+                    <span class="order-status completed">Completed</span>
+                    <span class="order-date">5 November 2025</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+                <!--
+                B => bold |الخط الfat|
+                strong => bold => important text |الخط الfat|
+                i => italic |الخط الitalics|
+                em => italic => important text |الخط الitalics|
+                mark => highlighted text |الخط الhighlighted|
+                u => underline text |الخط تحتفظ|
+                small => small text |الخط الصغير|
+                del => deleted text |الخط المحذوف|
+                ins => inserted text => new added text |الخط المضاف|
+                sub => sub script |الخط تحت|
+                sup => super script |الخط فوق|
+                اختصار التعليق الجانبي هوا cmd + /
+                -->
+            <div class="header">
+                <header class="site-header">
+             <a href="#home" class="logo">Manar's Jewellery Shop</a>  
+             <nav class="main-nav">
+<ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="about us.html">About us</a></li>
+    <li><a href="mailto:manar.alshebly2001@gmail.com">Contact us</a></li>
+    <li><a href="cart.html">Cart</a></li>
+</ul> </header>  
+</nav>        
+        <div>
+            <!-- form action="" method="GET"  يعرض البيانات في url
+                 form action="" method="POST" يعرض البيانات في body -->
+            <form action="" method="GET" novalidate target="_blank">
+            
+        </div>
+
+         <header class="hero-section">
+        <div class="hero-content">
+            <!-- العبارة الترحيبية -->
+            <h1>Welcome, Gorgeous! 💎</h1>
+            
+            <!-- وصف البراند -->
+            <p bold>Get ready for a great experience !!</p>
+            
+                <p>You’ve just entered a world where sparkle isn’t optional it’s a lifestyle ✨ At Manar's Jewellery 💖 every piece of jewelry is designed to say one thing: you were born to shine.</p>
+                <p>Go ahead, treat yourself because diamonds may not solve all your problems, but they’re a pretty good start! 😉</p>
+            
+            <!-- زر دعوة للعمل -->
+            <a href="#products" class="cta-button">Shop Now</a>
+        </div>
+    </header>
+
+
+              <!-- <img src="https://ar.swarovski.sa/on/demandware.static/-/Sites-swarovski-ksa-navigation-catalog/default/dw153c1a1d/plp-header/Styling_Image_011_991_EXT_TT_PLP_MOB.jpg" alt="Will not show" width="600" height="300"> -->
+                      <!--  ul=> unordered list |القائمة بدون رقم|
+                        ol=> ordered list |القائمة بالرقم|
+                        li=> list item |العنصر في القائمة| -->
+
+                    <!--
+                        thead=> table header |الصفحة العلوية|
+                        tbody=> table body |الصفحة الوسطى|
+                        tfoot=> table footer |الصفحة السفلية|
+                        tr=> table row |الصف|
+                        th=> table header |العنوان|
+                        td=> table data |البيانات|
+                        <td colspan="2"></td> merge cells |دمج الخلايا|
+                        border=> table border هيكل الجدول
+                        width=> table width عرض الجدول
+                        height=> table height ارتفاع الجدول 
+                        caption=> table caption |العنوان|
+                        -->
+                    
+ <!-- <hr/> => horizontal rule |خط أفقي | -->
+                     <!-- <div> => division |قسم| -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manar's Jewellery Shop</title>
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Our Featured Products</h1>
+
+        <!-- قسم السلسال -->
+        <section id="products" class="products-section">
+            <h2 class="hero-content">Necklaces:</h2>
+        <div class="hero-content" >
+            <p>A necklace that tells your story in every detail.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <!-- منتج ١ -->
+                             <div class="product-card">
+                  <img src="https://images.unsplash.com/photo-1664068671643-7d3dfca5babe?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1740" 
+                 width="130" height="130" alt="Necklace" class="rounded float-start">
+                 <h3 class="product-title">high neck</h3>
+                <p class="product-price">$499.99</p>  <form action="cart.html" method="GET">
+                <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
+            </div>
+                                <!-- منتج ٢ -->
+
+        <div class="product-card">
+                      <img src="https://images.unsplash.com/photo-1633555234047-192d10238f5f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1335" 
+                    width="110" height="130" alt="Necklace" class="rounded float-start">
+                <h3 class="product-title">Drop necklace</h3>
+                    <p class="product-price">$349.99</p> 
+                <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
+            </div>
+                <br>
+            <!-- منتج ٣ -->
+        <div class="product-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1671826911198-2580627f2c6e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1287" 
+                    width="110" height="130" alt="Necklace" class="rounded float-start">
+                <h3 class="product-title">long necklace</h3>
+                <p class="product-price">$299.99</p>
+                <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
+            </div>
+            <br>
+        </section>
+                <!--قسم الاساور -->
+               <section class="category">
+            <h2 class="hero-content">Bracelet:</h2>
+        <div class="hero-content" >
+            <p>Because the right bracelet makes every moment feel special.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <!-- منتج ١ -->
+        <div class="product-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1724075323544-64a09f14f80b?q=80&w=1902&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                     width="100" height="130" alt="Bracelet" class="product-image">            
+                         <h3 class="product-title">Chain bracelet</h3>
+                    <p class="product-price">$250.99</p>  <form action="cart.html" method="GET">
+                <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
+            </div>
+                <br>
+        <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1744472457504-f99a96ecbd3e?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                     width="130" height="130" alt="Bracelet">
+                         <h3 class="product-title">Choker bracelet</h3>
+                    <p class="product-price">$250.99</p>
+                <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
+                <br>
+                    <!-- منتج ٣ -->
+        <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1741071520904-37ef3c0fea09?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                     width="130" height="130" alt="Bracelet">
+                 <h3 class="product-title">Bangle bracelet</h3>
+                    <p class="product-price">$200.99</p>
+                <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
+                <br>
+        </section>
+        <!-- قسم الخواتم -->
+        <section class="category">
+            <h2 class="hero-content">Errings:</h2>
+        <div class="hero-content" >
+            <p>A ring that captures your shine.</p>     
+            <div class="product-grid">
+                <div class="product-card">
+                    <!-- منتج ١ -->
+                    <div class="product-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1732706751151-ddc9e1b8773f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1311"
+                     class="rounded float-start" alt="Errings" width="110" height="130">
+                                     <h3 class="product-title">Hoop Errings</h3>
+                    <p class="product-price">$120.99</p>  
+                    <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>  
+            </div>    
+            <br>
+                    <!-- منتج ٢ -->
+        <div class="product-card">
+                    <img src="https://media.istockphoto.com/id/2198141631/photo/stylish-gold-and-silver-hoop-earrings-are-on-white-catalog-of-jewelry.jpg?s=612x612&w=is&k=20&c=5_20_BUFh4ySnCEvIGVmMyDkYDprxrhklQeOv48otjY="
+                     class="rounded float-start" alt="Errings" width="110" height="130">
+                                    <h3 class="product-title">loop Errings</h3>
+                 <p class="product-price">$250.99</p>
+                                <div class="product-info">
+                <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
+            </div>
+            <br>
+                    <!-- منتج ٣ -->
+        <div class="product-card">
+                    <img src="https://www.ivaanasilver.com/cdn/shop/files/Img13660-1_d1af181a-7dd4-4e50-a9ed-81945d11434c.jpg?v=1716384308&width=2048="
+                     class="rounded mx-auto d-block" alt="Errings" width="110" height="110">            <div class="product-info">
+             <h3 class="product-title">Drop Earrings</h3>
+                    <p class="product-price">$350.99</p>
+                <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>         
+            </div>
+            <br>
+        </section>
+        <!-- </section>
+    Products Section
+<section id="products" class="products-section">
+    <h2>Our Featured Jewelry</h2>
+    <div class="products-grid"> -->
+        <!-- Product 1
+        <div class="product-card">
+            <img src="images/ring1.jpg" alt="Diamond Ring" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Diamond Solitaire Ring</h3>
+                <p class="product-price">$499.99</p>  <form action="cart.html" method="GET">
+                <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form> <br>
+        </div> -->
+
+        <!-- Product 2
+        <div class="product-card">
+            <img src="images/necklace1.jpg" alt="Gold Necklace" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Gold Pendant Necklace</h3>
+                <p class="product-price">$349.99</p>
+                <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>                    <br>                </form>
+        </div> -->
+
+        <!-- Product 3
+        <div class="product-card">
+            <img src="images/earrings1.jpg" alt="Pearl Earrings" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Pearl Drop Earrings</h3>
+                <p class="product-price">$279.99</p>  <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>                
+                <br>
+        </div> -->
+
+        <!-- Product 4 -->
+        <!-- <div class="product-card">
+            <img src="images/bracelet1.jpg" alt="Silver Bracelet" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Silver Chain Bracelet</h3>
+                <p class="product-price">$199.99</p>  <form action="cart.html" method="GET">
+                <form action="cart.html" method="GET">
+                    <input type="hidden" name="product" value="gold_necklace">
+                    <input type="hidden" name="price" value="349.99">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
+            </div>
+        </section> -->
+</body>
+</html>
+                <!-- 
+                reversed=> reversed the order of the list |العكس|
+                start=> start the list from a number |البداية من رقم|
+                type=> type of the list | A, a, I, i, 1 |نوع القائمة | A, a, I, i, 1
+                value=> value of the list item |قيمة العنصر في القائمة|
+                 -->
+                    
+                    <!-- Dl => description list |الوصف|
+                    dt=> description term |الوصف|
+                    dd=> description description of the term |وصف التفاصيل|
+                     -->
+               
+                <!-- 
+                src=> source |ال مصدر|
+                alt=> alternate text |النص البديل|
+                width=> img width |عرض الصورة|
+                height=> img height |ارتفاع الصورة|
+                 -->
