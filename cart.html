@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Manar's Jewellery Shop</title>
+    <link rel="stylesheet" href="master.css">
+    <style>
+        .cart-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .cart-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cart-items {
+            margin-bottom: 30px;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .item-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        
+        .item-details {
+            flex-grow: 1;
+        }
+        
+        .item-title {
+            font-size: 1.2em;
+            margin: 0 0 5px 0;
+        }
+        
+        .item-price {
+            font-weight: bold;
+            color: #b8860b;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+        .quantity-btn {
+            background: #f0f0f0;
+            border: none;
+            width: 30px;
+            height: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            margin: 0 10px;
+            height: 30px;
+            border: 1px solid #ddd;
+        }
+        
+        .remove-item {
+            color: #ff4444;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+        
+        .cart-summary {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        
+        .total {
+            font-size: 1.3em;
+            font-weight: bold;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #b8860b;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .checkout-btn:hover {
+            background: #9a6f08;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .continue-shopping {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <header class="site-header">
+            <a href="index.html" class="logo">Manar's Jewellery Shop</a>  
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="index.html#categories">Categories</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="mailto:manar.alshebly2001@gmail.com">Contact us</a></li>
+                    <li class="active"><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <h1>Your Shopping Cart</h1>
+            <p>Review your items or continue shopping</p>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically inserted here by JavaScript -->
+            <div class="empty-cart">
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added anything to your cart yet.</p>
+                <a href="index.html#products" class="continue-shopping">Continue Shopping</a>
+            </div>
+        </div>
+        
+        <div class="cart-summary" id="cart-summary" style="display: none;">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span id="shipping">Free</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="total">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        // This is a basic implementation. In a real app, you would load cart data from a backend or local storage.
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample cart data - in a real app, this would come from your backend or local storage
+            const cartItems = [];
+            
+            // Load cart items from localStorage if they exist
+            const savedCart = localStorage.getItem('cart');
+            if (savedCart) {
+                cartItems.push(...JSON.parse(savedCart));
+                updateCartDisplay();
+            }
+            
+            // Update cart count in navigation
+            function updateCartCount() {
+                const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+                document.getElementById('cart-count').textContent = totalItems || '0';
+                
+                // Show/hide empty cart message and summary
+                const emptyCart = document.querySelector('.empty-cart');
+                const cartSummary = document.getElementById('cart-summary');
+                
+                if (totalItems > 0) {
+                    emptyCart.style.display = 'none';
+                    cartSummary.style.display = 'block';
+                } else {
+                    emptyCart.style.display = 'block';
+                    cartSummary.style.display = 'none';
+                }
+            }
+            
+            // Update the cart display
+            function updateCartDisplay() {
+                const cartItemsContainer = document.getElementById('cart-items');
+                let subtotal = 0;
+                
+                // Clear existing items (except the empty cart message)
+                const emptyCart = document.querySelector('.empty-cart');
+                if (cartItems.length === 0) {
+                    emptyCart.style.display = 'block';
+                    cartItemsContainer.innerHTML = '';
+                    cartItemsContainer.appendChild(emptyCart);
+                    updateCartCount();
+                    return;
+                } else {
+                    emptyCart.style.display = 'none';
+                    cartItemsContainer.innerHTML = '';
+                }
+                
+                // Add each item to the cart display
+                cartItems.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+                    
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'cart-item';
+                    itemElement.innerHTML = `
+                        <img src="${item.image || 'placeholder.jpg'}" alt="${item.name}" class="item-image">
+                        <div class="item-details">
+                            <h3 class="item-title">${item.name}</h3>
+                            <div class="item-price">$${item.price.toFixed(2)}</div>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="updateQuantity(${index}, ${item.quantity - 1})">-</button>
+                                <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
+                                <button class="quantity-btn" onclick="updateQuantity(${index}, ${item.quantity + 1})">+</button>
+                            </div>
+                        </div>
+                        <div class="item-total">$${itemTotal.toFixed(2)}</div>
+                        <button class="remove-item" onclick="removeItem(${index})">× Remove</button>
+                    `;
+                    
+                    cartItemsContainer.appendChild(itemElement);
+                });
+                
+                // Update summary
+                document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+                document.getElementById('total').textContent = `$${subtotal.toFixed(2)}`;
+                
+                updateCartCount();
+                
+                // Save cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+            }
+            
+            // Global functions for cart operations
+            window.updateQuantity = function(index, newQuantity) {
+                newQuantity = parseInt(newQuantity);
+                if (newQuantity < 1) newQuantity = 1;
+                
+                cartItems[index].quantity = newQuantity;
+                updateCartDisplay();
+            };
+            
+            window.removeItem = function(index) {
+                cartItems.splice(index, 1);
+                updateCartDisplay();
+            };
+            
+            // Initialize cart display
+            updateCartDisplay();
+            
+            // Checkout button handler
+            document.getElementById('checkout-btn').addEventListener('click', function() {
+                alert('Checkout functionality would be implemented here!');
+                // In a real app, you would redirect to a checkout page
+            });
+        });
+    </script>
+</body>
+</html>
