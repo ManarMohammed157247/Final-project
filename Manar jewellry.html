@@ -78,6 +78,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <title>Manar's Jewellery</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
                  <link rel="stylesheet" href="master.css">
 
@@ -166,6 +167,16 @@
                 sup => super script |الخط فوق|
                 اختصار التعليق الجانبي هوا cmd + /
                 -->
+
+                <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Navbar</a>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
             <div class="header">
                 <header class="site-header">
              <a href="#home" class="logo">Manar's Jewellery Shop</a>  
@@ -250,6 +261,8 @@
                  width="130" height="130" alt="Necklace" class="rounded float-start">
                  <h3 class="product-title">high neck</h3>
                 <p class="product-price">$499.99</p>  <form action="cart.html" method="GET">
+                    <label for="exampleColorInput" class="form-label">Color picker</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
                 <form action="cart.html" method="GET">
                     <input type="hidden" name="product" value="gold_necklace">
                     <input type="hidden" name="price" value="349.99">
@@ -264,6 +277,8 @@
                     width="110" height="130" alt="Necklace" class="rounded float-start">
                 <h3 class="product-title">Drop necklace</h3>
                     <p class="product-price">$349.99</p> 
+                    <label for="exampleColorInput" class="form-label">Color picker</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
                 <form action="cart.html" method="GET">
                     <input type="hidden" name="product" value="gold_necklace">
                     <input type="hidden" name="price" value="349.99">
@@ -278,6 +293,8 @@
                     width="110" height="130" alt="Necklace" class="rounded float-start">
                 <h3 class="product-title">long necklace</h3>
                 <p class="product-price">$299.99</p>
+                <label for="exampleColorInput" class="form-label">Color picker</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
                 <form action="cart.html" method="GET">
                     <input type="hidden" name="product" value="gold_necklace">
                     <input type="hidden" name="price" value="349.99">
@@ -300,6 +317,8 @@
                      width="100" height="130" alt="Bracelet" class="product-image">            
                          <h3 class="product-title">Chain bracelet</h3>
                     <p class="product-price">$250.99</p>  <form action="cart.html" method="GET">
+                        <label for="exampleColorInput" class="form-label">Color picker</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
                 <form action="cart.html" method="GET">
                     <input type="hidden" name="product" value="gold_necklace">
                     <input type="hidden" name="price" value="349.99">
@@ -313,6 +332,8 @@
                      width="130" height="130" alt="Bracelet">
                          <h3 class="product-title">Choker bracelet</h3>
                     <p class="product-price">$250.99</p>
+                    <label for="exampleColorInput" class="form-label">Color picker</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
                 <form action="cart.html" method="GET">
                     <input type="hidden" name="product" value="gold_necklace">
                     <input type="hidden" name="price" value="349.99">
@@ -326,6 +347,8 @@
                      width="130" height="130" alt="Bracelet">
                  <h3 class="product-title">Bangle bracelet</h3>
                     <p class="product-price">$200.99</p>
+                    <label for="exampleColorInput" class="form-label">Color picker</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
                 <form action="cart.html" method="GET">
                     <input type="hidden" name="product" value="gold_necklace">
                     <input type="hidden" name="price" value="349.99">
@@ -347,6 +370,8 @@
                      class="rounded float-start" alt="Errings" width="110" height="130">
                                      <h3 class="product-title">Hoop Errings</h3>
                     <p class="product-price">$120.99</p>  
+                    <label for="exampleColorInput" class="form-label">Color picker</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
                     <form action="cart.html" method="GET">
                     <input type="hidden" name="product" value="gold_necklace">
                     <input type="hidden" name="price" value="349.99">
@@ -365,6 +390,8 @@
                 <form action="cart.html" method="GET">
                     <input type="hidden" name="product" value="gold_necklace">
                     <input type="hidden" name="price" value="349.99">
+                    <label for="exampleColorInput" class="form-label">Color picker</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
                     <input type="number" name="quantity" value="1" min="1" class="quantity-input">
                     <button type="submit" class="add-to-cart">Add to Cart</button>
                 </form>
@@ -376,6 +403,8 @@
                      class="rounded mx-auto d-block" alt="Errings" width="110" height="110">            <div class="product-info">
              <h3 class="product-title">Drop Earrings</h3>
                     <p class="product-price">$350.99</p>
+                    <label for="exampleColorInput" class="form-label">Color picker</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
                 <form action="cart.html" method="GET">
                     <input type="hidden" name="product" value="gold_necklace">
                     <input type="hidden" name="price" value="349.99">
@@ -385,67 +414,8 @@
             </div>
             <br>
         </section>
-        <!-- </section>
-    Products Section
-<section id="products" class="products-section">
-    <h2>Our Featured Jewelry</h2>
-    <div class="products-grid"> -->
-        <!-- Product 1
-        <div class="product-card">
-            <img src="images/ring1.jpg" alt="Diamond Ring" class="product-image">
-            <div class="product-info">
-                <h3 class="product-title">Diamond Solitaire Ring</h3>
-                <p class="product-price">$499.99</p>  <form action="cart.html" method="GET">
-                <form action="cart.html" method="GET">
-                    <input type="hidden" name="product" value="gold_necklace">
-                    <input type="hidden" name="price" value="349.99">
-                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-                    <button type="submit" class="add-to-cart">Add to Cart</button>
-                </form> <br>
-        </div> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-        <!-- Product 2
-        <div class="product-card">
-            <img src="images/necklace1.jpg" alt="Gold Necklace" class="product-image">
-            <div class="product-info">
-                <h3 class="product-title">Gold Pendant Necklace</h3>
-                <p class="product-price">$349.99</p>
-                <form action="cart.html" method="GET">
-                    <input type="hidden" name="product" value="gold_necklace">
-                    <input type="hidden" name="price" value="349.99">
-                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-                    <button type="submit" class="add-to-cart">Add to Cart</button>
-                </form>                    <br>                </form>
-        </div> -->
-
-        <!-- Product 3
-        <div class="product-card">
-            <img src="images/earrings1.jpg" alt="Pearl Earrings" class="product-image">
-            <div class="product-info">
-                <h3 class="product-title">Pearl Drop Earrings</h3>
-                <p class="product-price">$279.99</p>  <form action="cart.html" method="GET">
-                    <input type="hidden" name="product" value="gold_necklace">
-                    <input type="hidden" name="price" value="349.99">
-                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-                    <button type="submit" class="add-to-cart">Add to Cart</button>
-                </form>                
-                <br>
-        </div> -->
-
-        <!-- Product 4 -->
-        <!-- <div class="product-card">
-            <img src="images/bracelet1.jpg" alt="Silver Bracelet" class="product-image">
-            <div class="product-info">
-                <h3 class="product-title">Silver Chain Bracelet</h3>
-                <p class="product-price">$199.99</p>  <form action="cart.html" method="GET">
-                <form action="cart.html" method="GET">
-                    <input type="hidden" name="product" value="gold_necklace">
-                    <input type="hidden" name="price" value="349.99">
-                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-                    <button type="submit" class="add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-        </section> -->
 </body>
 </html>
                 <!-- 
